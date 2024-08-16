@@ -149,7 +149,7 @@ char *playscreen(int *num, long *score, int *bell, int maxmoves, char keys[10])
         default:
             ch = getch();
         }
-        if ((record_file != -1) && (ch != 'q'))
+        if ((record_file != -1) && (ch != 'q') && ((int)ch != 27))
             if (write(record_file, &ch, 1) == -1)
             {
                 fprintf(stderr, "write error\n");
@@ -210,7 +210,7 @@ char *playscreen(int *num, long *score, int *bell, int maxmoves, char keys[10])
             display(sx, sy, frow);
             continue;
         }
-        if (ch == 'q')
+        if (ch == 'q' || (int)ch == 27)
         {
             strcpy(howdead, "quitting the game");
             return howdead;

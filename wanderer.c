@@ -338,7 +338,7 @@ int main(int argc, char **argv)
                 break;
             }
             dead = playscreen(&num, &score, &bell, maxmoves, keys);
-            if ((dead != NULL) && (*dead == '~'))
+			if ((dead != NULL) && (*dead == '~'))
             {
                 num = (int) (dead[1]) - 1;
                 dead = NULL;
